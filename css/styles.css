@@ -1,0 +1,127 @@
+@media (min-width: 576px) {
+  .container {
+    max-width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1260px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+@media (max-width: 576px) {
+  #assignImg > form {
+    display: block;
+  }
+}
+.img-wrap {
+  margin-top: 1rem;
+}
+.img-wrap > img {
+  margin: 5px;
+  border-radius: 5px;
+  box-shadow: rgb(56, 54, 54) 1px 0px 5px 1px;
+}
+
+#assignImg {
+  margin-top: 1rem;
+}
+#assignImg > form > label.emailInputLabel {
+  font-size: 20px;
+}
+#assignImg > form > input.email-input {
+  width: 100%;
+  height: 2rem;
+  padding: 7px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: rgb(56, 54, 54) 0px 0px 7px 1px;
+}
+#assignImg > form > input.email-input:focus, #assignImg > form > input.email-input:active, #assignImg > form > input.email-input:focus-visible {
+  border: none;
+  outline: none;
+}
+#assignImg > form > input.submit-btn {
+  margin-top: 10px;
+  font-size: 1rem;
+  padding: 5px 10px 5px 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: rgb(56, 54, 54) 0px 0px 7px 1px;
+  width: 100%;
+}
+
+.imgDisplay__head {
+  margin-top: 1rem;
+  text-align: center;
+}
+.imgDisplay__head > #saved__Emails {
+  max-width: 75%;
+  height: 2rem;
+}
+
+.imgDisplayContainer {
+  margin-top: 20px;
+}
+.imgDisplayContainer > .row > .col > img {
+  margin: 5px;
+  border-radius: 5px;
+  box-shadow: rgb(56, 54, 54) 1px 0px 5px 1px;
+}
+
+html {
+  line-height: 1.15;
+  font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.4px;
+  color: #333;
+  line-height: 1.42857143;
+  margin: auto;
+  background-color: #adacaa;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  line-height: 1.875rem;
+}
+
+.container {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+.col {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=styles.css.map */

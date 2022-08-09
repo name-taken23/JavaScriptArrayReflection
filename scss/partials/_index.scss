@@ -1,0 +1,83 @@
+
+@media (max-width: 576px){
+    #assignImg > form{
+        display: block;
+    }
+}
+
+.img-wrap {
+    margin-top: 1rem;
+
+    >img {
+        margin: 5px;
+        border-radius: 5px;
+        box-shadow: rgb(56, 54, 54) 1px 0px 5px 1px;
+    }
+}
+
+#assignImg {
+    margin-top: 1rem;
+
+    > form {
+        >label.emailInputLabel {
+            font-size: 20px;
+        }
+        >input.email-input {
+            width: 100%;
+            height: 2rem;
+            padding: 7px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: rgb(56, 54, 54) 0px 0px 7px 1px; 
+
+            &:focus, &:active, &:focus-visible {
+                border: none;
+                outline: none;
+            }
+        }
+        >input.submit-btn {
+            margin-top: 10px;
+            font-size: 1rem;
+            padding: 5px 10px 5px 10px;
+            border: none; 
+            border-radius: 5px; 
+            box-shadow: rgb(56, 54, 54) 0px 0px 7px 1px;     
+            width: 100%;     
+        }
+
+    }
+
+
+    
+}
+
+.imgDisplay__head {
+    margin-top: 1rem;
+    text-align: center;
+
+
+    >#saved__Emails {
+        max-width: 75%;
+        height: 2rem;
+    }
+
+    
+}
+
+.imgDisplayContainer {
+    margin-top: 20px;
+
+    >.row {
+
+        >.col {
+
+
+            >img {
+                margin: 5px;
+                border-radius: 5px;
+                box-shadow: rgb(56, 54, 54) 1px 0px 5px 1px;
+            }
+        }
+
+    }
+}
