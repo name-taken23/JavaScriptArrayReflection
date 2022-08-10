@@ -44,11 +44,12 @@ $('.submit-btn').on('click', () => {
         alert("Please enter a valid email.");
     }
     else if (!search(email)) {
-        z++;
+       
         storage.push([email, url]);
-        var option = $("<option></option").text(email).attr("value", z-1);
+        var option = $("<option></option").text(email).attr("value", z);
         $('#saved__Emails').append(option);
         fetchImg();
+        z++;
         table(storage);
 
     
