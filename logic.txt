@@ -1,0 +1,42 @@
+else if (search(email)) {
+        x = storage.findIndex(e => e.includes(email));
+        storage[x].push(url);
+        logger(x);
+        fetchImg();
+        table(storage);
+       
+    }
+
+
+
+
+
+else if (!search(email)) {
+
+        storage.push([email, url]);
+        var option = $("<option></option").text(email).attr("value", x);
+        $('#saved__Emails').append(option);
+        fetchImg();
+        table(storage);
+
+    }
+
+
+
+ else if (storage[x][y] == email) {
+        storage[x].push(url);
+        fetchImg();
+        table(storage);
+
+
+    }
+
+
+else if (storage[x] == null) {
+        storage.push([email, url]);
+        table(storage);
+        fetchImg();
+        var option = $("<option></option").text(email).attr("value", x);
+        $('#saved__Emails').append(option);
+
+    } 

@@ -7,7 +7,7 @@ let email;
 let url;
 let x = 0;
 let y = 0;
-
+let z = 0;
 
 function fetchImg() {
     fetch(src).then(response => {
@@ -19,14 +19,18 @@ function fetchImg() {
 
 function search(email) {
     var result;
+    
     for (var i = 0, len = storage.length; i < len; i++) {
-        x++;
+        
         if (storage[i][0] === email) {
+            
             result = storage[i];
 
             break;
         }
+        
     }
+    
     return result;
 }
 $(window).on('load', fetchImg);
@@ -35,38 +39,49 @@ $(window).on('load', fetchImg);
 
 $('.submit-btn').on('click', () => {
     email = document.forms["emailSubmission"]["email"].value;
+
     if (regex.test(email) == false) {
         alert("Please enter a valid email.");
-    } else if (search(email)) {
+    }
+    else if (!search(email)) {
+        z++;
+        storage.push([email, url]);
+        var option = $("<option></option").text(email).attr("value", z-1);
+        $('#saved__Emails').append(option);
+        fetchImg();
+        table(storage);
+
+    
+   } else if (search(email)) {
         x = storage.findIndex(e => e.includes(email));
         storage[x].push(url);
         logger(x);
         fetchImg();
         table(storage);
-       
-    }else if (!search(email)) {
 
-        storage.push([email, url]);
-        var option = $("<option></option").text(email).attr("value", x);
-        $('#saved__Emails').append(option);
-        fetchImg();
-        table(storage);
+    }
 
-    } else if (storage[x][y] == email) {
-        storage[x].push(url);
-        fetchImg();
-        table(storage);
+});
 
 
-    }else if (storage[x] == null) {
-        storage.push([email, url]);
-        table(storage);
-        fetchImg();
-        var option = $("<option></option").text(email).attr("value", x);
-        $('#saved__Emails').append(option);
 
-    } 
-    //original logic
+$('#saved__Emails').change(function () {
+    if ($(this).val() === "none") {
+        $("img").remove(".items");
+    } else if ($(this).val()) {
+        var indexer = $(this).val();
+        $("img").remove(".items");
+        for (var p = 1; p < storage[indexer].length; p++) {
+
+            content = $('<img class="items">').attr("src", storage[indexer][p]);
+            $('.imgDisplayContainer div div').append(content);
+        }
+
+    }
+});
+
+
+  //original logic
     // else if (storage[x] == null) {
     //     storage.push([email, url]);
     //     table(storage);
@@ -95,29 +110,7 @@ $('.submit-btn').on('click', () => {
     //     logger(x);
     //     fetchImg();
     //     table(storage);
-       
+
     // }
-});
-
-
-
-$('#saved__Emails').change(function () {
-    if ($(this).val() === "none") {
-        $("img").remove(".items");
-    } else if ($(this).val()) {
-        $("img").remove(".items");
-        var indexer = $(this).val()
-
-        for (let p = 1; p < storage[indexer].length; p++) {
-            
-            content = $('<img class="items">').attr("src", storage[indexer][p]);
-            $('.imgDisplayContainer div div').append(content);
-        }
-
-    }
-});
-
-
-
 
 
