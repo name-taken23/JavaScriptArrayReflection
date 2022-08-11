@@ -11,6 +11,14 @@ let z = 0;
 
 function fetchImg() {
     fetch(src).then(response => {
+        if(response.status >= 400){
+            return response.json().then(errData => {
+                const error = new Error('Something went wrong!');
+                error.data = errData;
+                throw error;
+            });
+            
+        }
         $('.mainImg').attr("src", response.url);
         url = response.url;
     })
@@ -56,7 +64,6 @@ $('.submit-btn').on('click', () => {
    } else if (search(email)) {
         x = storage.findIndex(e => e.includes(email));
         storage[x].push(url);
-        logger(x);
         fetchImg();
         table(storage);
 
