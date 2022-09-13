@@ -11,73 +11,78 @@ let z = 0;
 
 function fetchImg() {
     fetch(src).then(response => {
-        if(response.status >= 400){
+        if (response.status >= 400) {
             return response.json().then(errData => {
                 const error = new Error('Something went wrong!');
                 error.data = errData;
                 throw error;
             });
-            
+
         }
         $('.mainImg').attr("src", response.url);
         url = response.url;
-    })
+    }).catch((error) => 
+    console.log("Error: " + error));
 }
 
 
 function search(email) {
     var result;
-    
+
     for (var i = 0, len = storage.length; i < len; i++) {
-        
+
         if (storage[i][0] === email) {
-            
+
             result = storage[i];
 
             break;
         }
-        
+
     }
-    
+
     return result;
 }
 $(window).on('load', fetchImg);
-
+$('#newImg-btn').on('click', fetchImg);
 //reformated logic
 
-$('.submit-btn').on('click', () => {
+$('#assign-btn').on('click', () => {
     email = document.forms["emailSubmission"]["email"].value;
 
     if (regex.test(email) == false) {
         alert("Please enter a valid email.");
     }
     else if (!search(email)) {
-       
+
         storage.push([email, url]);
         var option = $("<option></option").text(email).attr("value", z);
         $('#saved__Emails').append(option);
         fetchImg();
         z++;
-        table(storage);
+        //table(storage);
 
-    
-   } else if (search(email)) {
+
+    } else if (search(email)) {
         x = storage.findIndex(e => e.includes(email));
         storage[x].push(url);
         fetchImg();
-        table(storage);
+        //table(storage);
 
     }
-
+    
+    updateImg();
 });
 
 
 
-$('#saved__Emails').change(function () {
-    if ($(this).val() === "none") {
+$('#saved__Emails').change(updateImg);
+
+
+function updateImg() {
+    if ($('#saved__Emails').val() === "none") {
         $("img").remove(".items");
-    } else if ($(this).val()) {
-        var indexer = $(this).val();
+    } else if ($('#saved__Emails').val()) {
+        var indexer = $('#saved__Emails').val();
         $("img").remove(".items");
         for (var p = 1; p < storage[indexer].length; p++) {
 
@@ -86,7 +91,7 @@ $('#saved__Emails').change(function () {
         }
 
     }
-});
+};
 
 
   //original logic

@@ -59,19 +59,20 @@
   box-shadow: rgb(56, 54, 54) 0px 0px 7px 1px;
   width: 100%;
 }
+#assignImg > form > input.submit-btn:hover {
+  background-color: #a09f9d;
+}
 
 .imgDisplay__head {
   margin-top: 1rem;
   text-align: center;
 }
 .imgDisplay__head > #saved__Emails {
-  max-width: 75%;
+  border-radius: 5px;
   height: 2rem;
+  margin-bottom: 20px;
 }
 
-.imgDisplayContainer {
-  margin-top: 20px;
-}
 .imgDisplayContainer > .row > .col > img {
   margin: 5px;
   border-radius: 5px;

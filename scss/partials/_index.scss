@@ -1,6 +1,5 @@
-
-@media (max-width: 576px){
-    #assignImg > form{
+@media (max-width: 576px) {
+    #assignImg>form {
         display: block;
     }
 }
@@ -18,37 +17,45 @@
 #assignImg {
     margin-top: 1rem;
 
-    > form {
+    >form {
         >label.emailInputLabel {
             font-size: 20px;
         }
+
         >input.email-input {
             width: 100%;
             height: 2rem;
             padding: 7px;
             border: none;
             border-radius: 5px;
-            box-shadow: rgb(56, 54, 54) 0px 0px 7px 1px; 
+            box-shadow: rgb(56, 54, 54) 0px 0px 7px 1px;
 
-            &:focus, &:active, &:focus-visible {
+            &:focus,
+            &:active,
+            &:focus-visible {
                 border: none;
                 outline: none;
             }
         }
+
         >input.submit-btn {
             margin-top: 10px;
             font-size: 1rem;
             padding: 5px 10px 5px 10px;
-            border: none; 
-            border-radius: 5px; 
-            box-shadow: rgb(56, 54, 54) 0px 0px 7px 1px;     
-            width: 100%;     
+            border: none;
+            border-radius: 5px;
+            box-shadow: rgb(56, 54, 54) 0px 0px 7px 1px;
+            width: 100%;
+
+            &:hover {
+                background-color: darken(#adacaa, 5%);
+            }
         }
 
     }
 
 
-    
+
 }
 
 .imgDisplay__head {
@@ -57,15 +64,18 @@
 
 
     >#saved__Emails {
-        max-width: 75%;
+        
+        border-radius: 5px;
+       
         height: 2rem;
+        margin-bottom: 20px;
     }
 
-    
+
 }
 
 .imgDisplayContainer {
-    margin-top: 20px;
+   
 
     >.row {
 
